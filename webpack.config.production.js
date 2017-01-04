@@ -77,7 +77,24 @@ module.exports = {
         test: /\.jsx?$/,
         loaders: ['babel'],
         include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.[s]css$/,
+        loaders: [
+          'style-loader',
+          'css-loader?importLoaders=1',
+          'postcss-loader?sourceMap=inline'
+        ]
       }
     ]
+  },
+  postcss: function (webpack) {
+    return [
+      require('postcss-smart-import')({
+        addDependencyTo: webpack
+      }),
+      require('precss')(),
+      require('autoprefixer')(),
+    ];
   }
 };
