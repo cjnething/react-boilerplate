@@ -1,5 +1,5 @@
 # EvermoreDev's React Boilerplate
-[![Build Status](https://travis-ci.org/EvermoreDev/react-boilerplate.svg?branch=master)](https://travis-ci.org/EvermoreDev/react-boilerplate) 
+[![Build Status](https://travis-ci.org/evermoredev/react-boilerplate.svg?branch=master)](https://travis-ci.org/evermoredev/react-boilerplate) 
 
 This React boilerplate is designed to get you up and running with all of the latest technologies in the React world.
 
