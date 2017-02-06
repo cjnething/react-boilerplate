@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Match, Miss, Link } from 'react-router';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
 
 // Import view components
 import {
@@ -12,7 +17,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <div>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -20,14 +25,15 @@ export default class App extends React.Component {
           </ul>
 
           <hr/>
+          <Switch>
+            <Route path="/" exact component={HomeView} />
+            <Route path="/about" component={AboutView} />
 
-          <Match exactly pattern="/" component={HomeView} />
-          <Match pattern="/about" component={AboutView} />
-
-          {/* If none of those match, then a sibling `Miss` will render. */}
-          <Miss component={NotFoundView}/>
+            {/* If none of those match, then a sibling `Miss` will render. */}
+            <Route component={NotFoundView}/>
+          </Switch>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 
