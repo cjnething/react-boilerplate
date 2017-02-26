@@ -63,8 +63,9 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
